@@ -37,3 +37,8 @@ Ingrese en el espacio el comando que esea ejecutar, **evite el uso de espacio en
 `unaryInvoke(java.lang.Integer,valueOf,String,5)`
 
 ![image](https://github.com/AndresOnate/PARCIALT1-AREP/assets/63562181/3d70963b-e63c-4236-b9b0-91549d8626cf)
+
+
+## Comentarios
+
+-  No fue posible implementar `binaryInvoke`
