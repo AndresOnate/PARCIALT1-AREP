@@ -112,7 +112,9 @@ public class HttpCalculatorServer {
                         Class<?> classType;
                         if(type.equals("int")){
                             classType = int.class;
-                        }else {
+                        } else if (type.equals("String")) {
+                            classType = String.class;
+                        } else {
                             classType = Class.forName(type);
                         }
                         Class[] parameters = new Class[]{classType};
