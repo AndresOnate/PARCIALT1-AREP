@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HttpCalculatorServer {
 
@@ -91,7 +92,7 @@ public class HttpCalculatorServer {
                         Method methodToCall = classToInvoke.getMethod(methodName, parameters);
                         methodToCall.invoke(null);
                         System.out.println("Invocación Correcta");
-                        outputLine = "{\"Invocación\": \"Correcta\"}";
+                        outputLine = HttpBuilder.httpJSONResponse("{\"Invocación\": \"Correcta\"}");
 
                     }else if(command.startsWith("unaryInvoke")){
                         String request = command.split("unaryInvoke")[1];
@@ -106,14 +107,19 @@ public class HttpCalculatorServer {
                         System.out.println(methodName);
                         System.out.println(type);
                         System.out.println(value);
+
                         Class<?> classToInvoke = Class.forName(className);
-                        Class<?> classType = Class.forName(type);
+                        Class<?> classType;
+                        if(type.equals("int")){
+                            classType = int.class;
+                        }else {
+                            classType = Class.forName(type);
+                        }
                         Class[] parameters = new Class[]{classType};
                         Method methodToCall = classToInvoke.getMethod(methodName, parameters);
-
-                        Double result = (Double) methodToCall.invoke(null, Double.parseDouble(value));
+                        Object result = methodToCall.invoke(null, Integer.parseInt(value));
                         System.out.println("Invocación Correcta");
-                        outputLine = "{\"Resultado\": \""+ result + "\"}";
+                        outputLine = HttpBuilder.httpJSONResponse("{\"Resultado\": \""+ result + "\"}");
                     }else{
                         outputLine = "{\"Probando Api\": \"Hola\"}";
                     }
