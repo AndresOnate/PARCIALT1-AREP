@@ -90,9 +90,9 @@ public class HttpCalculatorServer {
                         Class<?> classToInvoke = Class.forName(className);
                         Class[] parameters = new Class[]{};
                         Method methodToCall = classToInvoke.getMethod(methodName, parameters);
-                        outputLine = (String) methodToCall.invoke(null);
+                        Object output =  methodToCall.invoke(null);
                         System.out.println("Invocación Correcta");
-                        outputLine = HttpBuilder.httpJSONResponse("{\"Invocación\": \"" + outputLine + "\"}");
+                        outputLine = HttpBuilder.httpJSONResponse("{\"Invocación\": \"" + output + "\"}");
 
                     }else if(command.startsWith("unaryInvoke")){
                         String request = command.split("unaryInvoke")[1];
