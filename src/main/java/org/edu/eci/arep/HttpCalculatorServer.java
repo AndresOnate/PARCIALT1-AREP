@@ -90,9 +90,9 @@ public class HttpCalculatorServer {
                         Class<?> classToInvoke = Class.forName(className);
                         Class[] parameters = new Class[]{};
                         Method methodToCall = classToInvoke.getMethod(methodName, parameters);
-                        methodToCall.invoke(null);
+                        outputLine = (String) methodToCall.invoke(null);
                         System.out.println("Invocación Correcta");
-                        outputLine = HttpBuilder.httpJSONResponse("{\"Invocación\": \"Correcta\"}");
+                        outputLine = HttpBuilder.httpJSONResponse("{\"Invocación\": \"" + outputLine + "\"}");
 
                     }else if(command.startsWith("unaryInvoke")){
                         String request = command.split("unaryInvoke")[1];
@@ -107,19 +107,26 @@ public class HttpCalculatorServer {
                         System.out.println(methodName);
                         System.out.println(type);
                         System.out.println(value);
-
                         Class<?> classToInvoke = Class.forName(className);
                         Class<?> classType;
+
                         if(type.equals("int")){
                             classType = int.class;
                         } else if (type.equals("String")) {
                             classType = String.class;
                         } else {
-                            classType = Class.forName(type);
+                            classType = Double.TYPE;
                         }
                         Class[] parameters = new Class[]{classType};
                         Method methodToCall = classToInvoke.getMethod(methodName, parameters);
-                        Object result = methodToCall.invoke(null, Integer.parseInt(value));
+                        Object result;
+                        if(type.equals("int")){
+                            result = methodToCall.invoke(null,  Integer.parseInt(value));
+                        } else if (type.equals("String")) {
+                            result = methodToCall.invoke(null,  value);
+                        } else {
+                            result = methodToCall.invoke(null,  Double.parseDouble(value));
+                        }
                         System.out.println("Invocación Correcta");
                         outputLine = HttpBuilder.httpJSONResponse("{\"Resultado\": \""+ result + "\"}");
                     }else{
