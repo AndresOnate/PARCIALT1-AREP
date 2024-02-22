@@ -4,9 +4,10 @@
 
 1. Descargue el siguiente repositorio `https://github.com/AndresOnate/PARCIALT1-AREP.git`
 2. Ingrese al directorio del proyecto
-3. Abra dos líneas de comandos para los siguientes pasos:
-4. Ejecute el servidor API de la calculadora con el siguiente comando `java -cp target/classes org.edu.eci.arep.HttpCalculatorServer`
-5. Ejecute el servidor fachada con el siguiente comando `java -cp target/classes org.edu.eci.arep.HttpServer`
+3. Compile el proyecto `mvn compile`
+4. Abra dos líneas de comandos para los siguientes pasos:
+5. Ejecute el servidor API de la calculadora con el siguiente comando `java -cp target/classes org.edu.eci.arep.HttpCalculatorServer`
+6. Ejecute el servidor fachada con el siguiente comando `java -cp target/classes org.edu.eci.arep.HttpServer`
   
 ## Probando la aplicación
 
