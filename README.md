@@ -15,7 +15,7 @@ Ingrese a la siguiente dirección: `http://localhost:35000/cliente`
 
 ![image](https://github.com/AndresOnate/PARCIALT1-AREP/assets/63562181/daa4038d-93b1-4ae2-a121-c9c497dd7c58)
 
-Ingrese en el espacio el comando que esea ejecutar, **evite el uso de espacio entre argumentos**, es decir, unaryInvoke(java.lang.Math,abs,int,3), como puede apreciar **no hay espacio entre las comas**
+Ingrese en el formulario el comando que esea ejecutar, **evite el uso de espacio entre argumentos**, es decir, unaryInvoke(java.lang.Math,abs,int,3), como puede apreciar **no hay espacio entre las comas**
 
 ## Ejemplo de ejecución
 
