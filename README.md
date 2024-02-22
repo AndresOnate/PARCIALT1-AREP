@@ -33,6 +33,10 @@ Ingrese en el espacio el comando que esea ejecutar, **evite el uso de espacio en
 
 ![image](https://github.com/AndresOnate/PARCIALT1-AREP/assets/63562181/aa1f903a-15dc-417b-a9c3-7735e3537ed8)
 
+`unaryInvoke(java.lang.Math,cos,Double,180)`
+
+![image](https://github.com/AndresOnate/PARCIALT1-AREP/assets/63562181/e52abf78-7bfc-4624-92a9-da4b70118ffc)
+
 
 `unaryInvoke(java.lang.Integer,valueOf,String,5)`
 
