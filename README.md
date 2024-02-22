@@ -2,7 +2,7 @@
 
 ## Iniciando 
 
-1. Descargue el siguiente repositorio `https://github.com/AndresOnate/PARCIALT1-AREP.git`
+1. Descargue el siguiente repositorio `git clone https://github.com/AndresOnate/PARCIALT1-AREP.git`
 2. Ingrese al directorio del proyecto
 3. Compile el proyecto `mvn compile`
 4. Abra dos líneas de comandos para los siguientes pasos:
